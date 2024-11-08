@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Встановлюємо шрифт для всіх елементів */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem; /* Доданий відступ */
+}
+
+.logo {
+  text-align: center; /* Центруємо текст */
+  font-size: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 20rem; /* Максимальна ширина логотипу */
+  font-family: cursive;
+  color: red; /* Колір тексту */
+  text-shadow: rgba(5, 5, 236, 1) 2px 1px 1px; /* Тінь для тексту */
+}
+
+.content {
+  display: flex; /* Використовуємо flex для контенту */
+}
+
+.articles, .sidebar {
+  padding: 10px;
+  border: 3px solid black; /* Оформлення межі для бокових елементів */
+}
+
+.articles {
+  flex: 3; /* Призначаємо ширину для основного контенту */
+}
+
+.sidebar {
+  flex: 1; /* Призначаємо ширину для бокової панелі */
+}
+
+/* Загальний стиль для статті */
+.post {
+  display: flex;
+  gap: 1rem; /* Відстань між елементами в статті */
+  margin-bottom: 1rem;
+}
+
+/* Стиль для зображень */
+.image {
+  width: 50%; /* Ширина зображення */
+  height: auto; /* Автоматичне визначення висоти */
+  object-fit: cover; /* Збереження пропорцій зображення */
+}
+
+/* Контейнер для зображень */
+.images {
+  display: flex;
+  width: 50%;
+  margin-bottom: 1rem; /* Відступ знизу */
+}
+
+.image.double {
+  width: 100%; /* Зображення на всю ширину */
+}
+
+/* Стилі для текстової частини */
+.text {
+  flex: 1; /* Текстова частина займає доступну ширину */
+}
+
+h2 {
+  font-size: 1.5rem; /* Розмір заголовка */
+  margin-bottom: 0.5rem; /* Відступ знизу */
+}
+
+p {
+  margin: 0;
+  font-size: 1rem; /* Розмір шрифта для абзаців */
+}
+
+/* Медіа-запит для екранів до 768px */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Для мобільних пристроїв — розташовуємо елементи вертикально */
+  }
+
+  .image.double {
+    width: 100%; /* Зображення на всю ширину */
+  }
+}
+
+.text h2 {
+  font-size: 20px; /* Зменшення розміру шрифта заголовка */
+  margin-bottom: 5px; /* Відступ знизу */
+}
+
+.text p {
+  font-size: 14px; /* Зменшення розміру шрифта для абзаців */
+  margin-top: 1rem; /* Відступ зверху */
+}
+
+.sidebar h2 {
+  font-size: 18px; /* Розмір шрифта заголовка в боковій панелі */
+  margin-bottom: 10px; /* Відступ знизу */
+}
+
+.sidebar p {
+  font-size: 14px; /* Розмір шрифта абзаців у боковій панелі */
+  margin-bottom: 20px; /* Відступ знизу */
+}

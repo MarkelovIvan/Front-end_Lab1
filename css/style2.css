@@ -1,0 +1,362 @@
+/* Скидання стандартних відступів і розмірів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основні стилі для тіла сторінки */
+body {
+  font-family: Arial, sans-serif; /* Встановлення шрифта */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Стилі для основного контенту та постів */
+.content, .post {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Відстань між елементами */
+  width: 100%;
+  max-width: 800px; /* Максимальна ширина */
+  padding: 15px;
+  border: 1px solid #ddd; /* Легке обрамлення */
+}
+
+/* Стилі для зображень у постах */
+.post img {
+  max-width: 100%; /* Максимальна ширина 100% */
+  height: auto; /* Автоматичне визначення висоти */
+}
+
+/* Логотип */
+.logo {
+  width: 200px;
+  height: 30px;
+  padding: 0 0;
+  font-size: 25px;
+  font-family: cursive;
+  margin-left: 1rem;
+  color: red;
+  text-shadow: rgba(5, 5, 236, 1) 2px 1px 1px; /* Тінь для тексту */
+}
+
+/* Стилі для header (верхній бар) */
+header {
+  position: fixed; /* Фіксована позиція */
+  z-index: 1;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between; /* Розташування елементів по боках */
+  align-items: center; /* Центрування по вертикалі */
+  padding: 10px;
+  background-color: rgb(214, 190, 190); /* Колір фону */
+  border: rgba(0, 0, 0, 0.3) 5px solid; /* Оформлення межі */
+}
+
+/* Стилі для бокової панелі */
+.sidebar {
+  padding: 10px 20px;
+  position: fixed; /* Фіксована позиція */
+  top: 50px;
+  left: 10px;
+  width: 200px;
+  height: auto;
+  background-color: #ffffff;
+  border: black 2px solid;
+  margin-top: 1rem; /* Верхній відступ */
+}
+
+/* Список в боковій панелі */
+.sidebar ul {
+  list-style: none; /* Без маркерів */
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 0.5rem; /* Відстань між елементами списку */
+}
+
+/* Посилання в боковій панелі */
+.sidebar a {
+  text-decoration: none; /* Без підкреслення */
+  color: black;
+}
+
+/* Ховер для посилань в боковій панелі */
+.sidebar a:hover {
+  color: blue; /* Колір під час наведення */
+}
+
+/* Основний контент */
+.container {
+  margin-top: 45px; /* Відступ зверху */
+  width: 100%;
+}
+
+/* Стилі для основного контенту */
+main {
+  margin: 0 20%; /* Відступи зліва та справа */
+  width: 70%; /* Ширина */
+}
+
+/* Стилі для пошуку */
+.search {
+  position: absolute; /* Абсолютне позиціонування */
+  left: 20%; /* Розташування по горизонталі */
+  width: 70%; /* Ширина */
+}
+
+/* Вхідне поле для пошуку */
+.search input[type="text"] {
+  padding: 10px 40px 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Закруглені кути */
+  width: 100%;
+}
+
+/* Іконка пошуку */
+.search .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Кнопка Кошика */
+.Cart-button {
+  width: auto;
+  height: 40px;
+  padding: 0.2rem;
+}
+
+/* Контейнер для карток */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 картки в ряд для стандартного екрану */
+  gap: 16px; /* Відстань між картками */
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Стилі для окремої картки */
+.card {
+  position: relative; /* Відносне позиціонування для батьківського елемента */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Закруглені кути */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь */
+  text-align: center;
+  font-family: Arial, sans-serif;
+  gap: 1rem;
+  background-color: #ffcbb2;
+}
+
+/* Зображення в картці */
+.card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+/* Стилі для вмісту картки */
+.card-content {
+  bottom: 0; /* Розміщуємо вміст внизу */
+  left: 0;
+  right: 0;
+  padding: 16px;
+}
+
+/* Заголовок картки */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Ціна картки */
+.card-price {
+  margin-top: 1rem;
+  font-size: 16px;
+}
+
+/* Кнопка "Купити" */
+.buy-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #60df12;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Ховер для кнопки "Купити" */
+.buy-button:hover {
+  background-color: #4ebc0f;
+}
+
+/* Адаптація для екранів шириною 1200px і більше (широкоформатні екрани) */
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Адаптація для екранів від 768px до 1199px (планшети та середні екрани) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Адаптація для екранів менше 768px (мобільні пристрої) */
+@media (max-width: 767px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 картка в ряд на мобільних пристроях */
+    gap: 12px; /* Зменшуємо відступи для мобільних */
+    padding: 10px; /* Зменшуємо внутрішні відступи */
+  }
+
+  .card {
+    padding: 1rem; /* Зменшуємо padding картки */
+  }
+
+  .card img {
+    height: 12rem; /* Зменшуємо висоту зображень на мобільних */
+  }
+
+  .card-title {
+    font-size: 16px; /* Зменшуємо розмір шрифта заголовка для мобільних */
+  }
+
+  .card-price {
+    font-size: 14px; /* Зменшуємо розмір шрифта ціни */
+  }
+
+  .buy-button {
+    padding: 8px 16px; /* Зменшуємо розмір кнопки */
+  }
+}
+
+/* Медіа запити для різних розмірів екранів */
+
+/* Для екранів шириною до 1024px */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+  main {
+    margin: 0 220px; /* Збільшення відступу для основного контенту */
+  }
+  .search {
+    left: 21.5%;
+  }
+}
+
+/* Для екранів шириною до 992px */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 180px;
+  }
+  main {
+    margin: 0 200px;
+  }
+  .logo {
+    width: 50px;
+    height: 30px;
+    padding: 0 0;
+    font-size: 15px;
+  }
+}
+
+/* Для мобільних пристроїв (до 768px) */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Приховуємо бокову панель */
+    position: fixed; /* Фіксована позиція */
+    max-width: 80%;
+    z-index: 10; /* Високий z-index для поверх інших елементів */
+    margin-top: 1rem;
+  }
+
+  main {
+    margin: 0 auto; /* Центруємо основний контент */
+    width: 100%;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 картки в ряд */
+    gap: 16px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 100px;
+    height: 30px;
+    padding: 0 0;
+    font-size: 20px;
+    margin-left: -0.5rem;
+  }
+
+  .search {
+    left: 16%;
+  }
+}
+
+/* Для мобільних пристроїв (до 426px) */
+@media (max-width: 426px) {
+  .search {
+    width: 15rem;
+    margin-left: 3rem;
+  }
+
+  .logo {
+    width: 100px;
+    height: 30px;
+    padding: 0 0;
+    margin-left: -0.5rem;
+    font-size: 20px;
+  }
+
+  .Cart-button {
+    width: auto;
+    height: 40px;
+    padding: 0.2rem;
+    margin-right: -0.5rem;
+  }
+}
+
+/* Для мобільних пристроїв (до 376px) */
+@media (max-width: 376px) {
+  header, main {
+    padding: 10px; /* Відступи для заголовка та основного контенту */
+  }
+
+  .search {
+    width: 11rem;
+    margin-left: 2rem;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 картка в ряд */
+    gap: 16px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: auto;
+    height: auto;
+    padding: 0 0;
+    margin-left: -0.4rem;
+    font-size: 13px;
+  }
+}

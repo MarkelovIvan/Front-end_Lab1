@@ -1,0 +1,216 @@
+/* Скидання стилів для всіх елементів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основний стиль для тіла сторінки */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Контейнер для контенту та публікацій */
+.content, .post {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Стиль для блоку публікації */
+.post{
+  border: 2px solid black;
+  padding: 15px;
+}
+
+/* Налаштування зображень у публікації */
+.post img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Заголовок сторінки */
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(214, 190, 190);
+  border: rgba(0, 0, 0, 0.3) 5px solid;
+}
+
+/* Навігаційна панель */
+.nav-sections {
+  position: fixed;
+  width: 100%;
+  margin-top: 45px;
+  height: 60px;
+  z-index: 2;
+  justify-content: center;
+  padding: 15px 0;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  background-color: rgb(214, 190, 190);
+}
+
+.nav-sections a {
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+/* Бічна панель */
+.sidebar {
+  width: 20%;
+  padding: 5px 10px;
+  border: 2px solid rgba(1, 1, 1, 1);
+  position: fixed;
+  top: 120px;
+  background-color: white;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+/* Блок з трендами */
+.trends {
+  width: 20%;
+  padding: 5px 10px;
+  border: 2px solid rgba(1, 1, 1, 1);
+  position: fixed;
+  top: 120px;
+  background-color: white;
+  max-height: 80%;
+  overflow-y: auto;
+  right: 0;
+}
+
+/* Список у sidebar та trends */
+.sidebar ul, .trends ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li,
+.trends ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a, .trends h2 {
+  text-decoration: none;
+  color: black;
+}
+
+/* Стиль для наведення на посилання у sidebar */
+.sidebar a:hover {
+  color: blue;
+}
+
+/* Основний контейнер для контенту */
+.container {
+  display: flex;
+  margin-top: 100px;
+}
+
+/* Основний блок контенту */
+main {
+  margin: 1rem 30%;
+  padding: 20px;
+}
+
+/* Пошуковий блок */
+.search {
+  position: relative;
+  display: inline-block;
+}
+
+.search input[type="text"] {
+  padding: 10px 40px 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Іконка пошуку всередині поля вводу */
+.search .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Адаптивність для екранів до 1200px */
+@media (max-width: 1200px) {
+  .sidebar, .trends {
+    width: 200px;
+  }
+  main {
+    margin: 0 220px;
+  }
+}
+
+/* Адаптивність для екранів до 992px */
+@media (max-width: 992px) {
+  .sidebar, .trends {
+    width: 180px;
+  }
+  main {
+    margin: 0 200px;
+  }
+}
+
+/* Адаптивність для мобільних пристроїв до 768px */
+@media (max-width: 768px) {
+  .sidebar, .trends {
+    display: none;
+    position: fixed;
+    top: 120px;
+    width: 40%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Основний контент на мобільних центровано */
+  main {
+    margin: 0;
+    padding: 10px;
+  }
+
+  /* Зменшення відстані між елементами у sidebar на мобільних */
+  .sidebar ul li,
+  .trends ul li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* Адаптивність для екранів до 365px */
+@media (max-width: 365px) {
+  header, .nav-sections, main, .trends {
+    padding: 10px;
+  }
+  .nav-sections {
+    flex-direction: row;
+    display: unset;
+    font-size: 25%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Стиль для логотипу */
+.logo{
+  font-family: cursive;
+  color: red;
+  text-shadow: rgba(5, 5, 236, 1) 2px 1px 1px;
+}
+
